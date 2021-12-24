@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="jcenalauncher4j:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/jcenalauncher4j_jar</output-path>
+    <root id="archive" name="jcenalauncher4j.jar">
+      <element id="module-output" name="jcenalauncher4j" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/formdev/flatlaf/2.0-rc1/flatlaf-2.0-rc1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/formdev/flatlaf-intellij-themes/2.0-rc1/flatlaf-intellij-themes-2.0-rc1.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
