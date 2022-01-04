@@ -24,6 +24,20 @@ public class WindowMain {
     private SettingsWindow settingsWindow;
     private DownloaderWindow downloaderWindow;
     private ArrayList<GameListing> gameListings;
+    private GameListModel gameListModel;
+    class GameListModel extends AbstractListModel {
+        public int getSize() {
+            return gameListings.size();
+        }
+
+        public Object getElementAt(int i) {
+            return gameListings.get(i).gameName;
+        }
+
+        public void updateList() {
+            fireContentsChanged(this, 0, gameListings.size());
+        }
+    }
     public WindowMain() {
         updateGameListings();
 
@@ -134,19 +148,11 @@ public class WindowMain {
         runCommand(AppMain.terminalRunCommand.replace("%command%", command));
     }
     private void createUIComponents() {
-        gameList = new JList(new AbstractListModel() {
-            @Override
-            public int getSize() {
-                return gameListings.size();
-            }
-
-            @Override
-            public Object getElementAt(int i) {
-                return gameListings.get(i).gameName;
-            }
-        });
+        gameListModel = new GameListModel();
+        gameList = new JList(gameListModel);
     }
     public void updateTable() {
+        gameListModel.updateList();
         gameList.repaint();
     }
     public void updateGameListings() {
