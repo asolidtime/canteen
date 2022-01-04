@@ -6,7 +6,7 @@ import java.util.Properties;
 
 public class AppConfig {
     public static void writeConfig() {
-        try (OutputStream output = new FileOutputStream(System.getProperty("user.home") + "/.config/jcenalauncher4j.properties")) {
+        try (OutputStream output = new FileOutputStream(System.getProperty("user.home") + "/.config/canteen.properties")) {
 
             Properties prop = new Properties();
 
@@ -25,7 +25,7 @@ public class AppConfig {
         }
     }
     public static void readConfig() {
-        try (InputStream input = new FileInputStream(System.getProperty("user.home") + "/.config/jcenalauncher4j.properties")) {
+        try (InputStream input = new FileInputStream(System.getProperty("user.home") + "/.config/canteen.properties")) {
 
             Properties prop = new Properties();
 
@@ -38,7 +38,7 @@ public class AppConfig {
             AppMain.theme = prop.getProperty("theme");
 
         } catch (IOException ex) {
-            File createdConfig = new File(System.getProperty("user.home") + "/.config/jcenalauncher4j.properties");
+            File createdConfig = new File(System.getProperty("user.home") + "/.config/canteen.properties");
             try {
                 createdConfig.createNewFile();
             } catch (IOException e) {

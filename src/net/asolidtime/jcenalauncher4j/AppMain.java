@@ -3,6 +3,7 @@ package net.asolidtime.jcenalauncher4j;
 import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatLightLaf;
 import com.formdev.flatlaf.intellijthemes.FlatArcDarkIJTheme;
+import net.asolidtime.jcenalauncher4j.downloader.DownloadManager;
 
 import javax.swing.*;
 import java.io.File;
@@ -12,6 +13,7 @@ public class AppMain {
     public static File gameDirLocation;
     public static String terminalRunCommand;
     public static String theme;
+    public static DownloadManager downloadManager;
 
     public static void main(String[] args) {
         // use antialiasing
@@ -43,6 +45,7 @@ public class AppMain {
         } catch (Exception ex){
             ex.printStackTrace();
         }
+        downloadManager = new DownloadManager();
         // start main window
         windowMain = new WindowMain();
         windowMain.setup();

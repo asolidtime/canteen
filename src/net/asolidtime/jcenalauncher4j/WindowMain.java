@@ -1,5 +1,6 @@
 package net.asolidtime.jcenalauncher4j;
 
+import net.asolidtime.jcenalauncher4j.downloader.DownloaderWindow;
 import net.asolidtime.jcenalauncher4j.game.GameListing;
 import net.asolidtime.jcenalauncher4j.game.GameListingComparator;
 import net.asolidtime.jcenalauncher4j.game.GameType;
@@ -19,7 +20,9 @@ public class WindowMain {
     private JPanel panelMain;
     private JLabel gameLabel;
     private JButton settingsButton;
+    private JButton downloadsButton;
     private SettingsWindow settingsWindow;
+    private DownloaderWindow downloaderWindow;
     private ArrayList<GameListing> gameListings;
     public WindowMain() {
         updateGameListings();
@@ -63,6 +66,13 @@ public class WindowMain {
             public void keyReleased(KeyEvent keyEvent) {
                 super.keyReleased(keyEvent);
                 updateToSelected();
+            }
+        });
+        downloadsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                downloaderWindow = new DownloaderWindow();
+                downloaderWindow.setup();
             }
         });
     }
