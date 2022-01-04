@@ -16,7 +16,7 @@ public class SearchWindow {
     private JScrollPane tableScrollPane;
     private JTable listingTable;
     private AbstractTableModel listingTableModel;
-    private final File downloadLocation = new File(AppMain.gameDirLocation.toString() + "/Canteen.Downloads");
+    private final File downloadLocation = new File(AppMain.gameDirLocation.toString() + "/Canteen.Downloads"); // BIG TODO: make this configurable
     public SearchWindow() {
         downloadLocation.mkdirs();
 
